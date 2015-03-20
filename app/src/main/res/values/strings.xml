@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">DevFest 2015</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="dev_fest">DevFest 2015</string>
+    <string name="dev_fest_image">Dev Fest Header</string>
+    <string name="android">Android</string>
+    <string name="wearables">Wearables &amp; IOT</string>
+    <string name="chrome">Chrome &amp; Cloud</string>
+    <string name="design">Design &amp; Front End</string>
+    <string name="getting_started">Getting Started</string>
+    <string name="android_testing">Android Testing with Espresso</string>
+
+    <string-array name="tracks">
+        <item>Choose Your Track:</item>
+        <item>@string/android</item>
+        <item>@string/wearables</item>
+        <item>@string/chrome</item>
+        <item>@string/design</item>
+        <item>@string/getting_started</item>
+    </string-array>
+    <string name="title_activity_recycler_view">RecyclerViewActivity</string>
+</resources>
