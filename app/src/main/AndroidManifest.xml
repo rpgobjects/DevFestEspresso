@@ -20,6 +20,11 @@
             android:name=".RecyclerViewActivity"
             android:label="@string/title_activity_recycler_view" >
         </activity>
+
+        <service
+            android:name="com.gdg.devfestespresso.BackgroundService"
+            android:exported="false" >
+        </service>
     </application>
 
 </manifest>

@@ -55,4 +55,19 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
         // assert TextView is on screen
         onView(withText(R.string.getting_started)).check(matches(isDisplayed()));
     }
+
+    public void testBackground() {
+        // register our idle resource
+        ServiceIdlingResource serviceIdlingResource = new ServiceIdlingResource("testBackground",getActivity());
+        registerIdlingResources(serviceIdlingResource);
+
+        // open overflow menu
+        openActionBarOverflowOrOptionsMenu(getInstrumentation().getTargetContext());
+
+        //click menu item
+        onView(withText(R.string.background)).perform(click());
+
+        // assert text
+        onView(withId(R.id.test_results)).check(matches(withText(R.string.dev_fest)));
+    }
 }

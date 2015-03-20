@@ -22,4 +22,5 @@
         <item>@string/getting_started</item>
     </string-array>
     <string name="title_activity_recycler_view">RecyclerViewActivity</string>
+    <string name="background">Background</string>
 </resources>

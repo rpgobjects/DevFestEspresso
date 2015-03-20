@@ -1,6 +1,8 @@
 package com.gdg.devfestespresso;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -13,7 +15,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends ActionBarActivity implements SharedPreferences.OnSharedPreferenceChangeListener {
 
     Spinner spinner;
     Toolbar toolbar;
@@ -49,8 +51,20 @@ public class MainActivity extends ActionBarActivity {
 
             }
         });
+
     }
 
+    @Override
+    protected void onStart() {
+        PreferenceManager.getDefaultSharedPreferences(this).registerOnSharedPreferenceChangeListener(this);
+        super.onStart();
+    }
+
+    @Override
+    protected void onStop() {
+        PreferenceManager.getDefaultSharedPreferences(this).unregisterOnSharedPreferenceChangeListener(this);
+        super.onStop();
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -70,8 +84,18 @@ public class MainActivity extends ActionBarActivity {
             Intent intent = new Intent(this,RecyclerViewActivity.class);
             startActivity(intent);
             return true;
+        } else if (id == R.id.action_test_bg) {
+            Intent intent = new Intent(this,BackgroundService.class);
+            startService(intent);
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+        if(key.equals(BackgroundService.BACKGROUND_MSG)) {
+            resultsTextView.setText(sharedPreferences.getString(key,"error"));
+        }
     }
 }
