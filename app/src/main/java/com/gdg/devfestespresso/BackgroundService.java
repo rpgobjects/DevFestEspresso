@@ -27,9 +27,7 @@ public class BackgroundService extends IntentService {
             SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
             int stringId = sharedPreferences.getString(BACKGROUND_MSG,"").equals(getString(R.string.dev_fest)) ? R.string.android_testing : R.string.dev_fest;
             PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit().putString(BACKGROUND_MSG,getString(stringId)).apply();
-        }
-        catch(InterruptedException e)
-        {
+        } catch(InterruptedException e) {
             e.printStackTrace();
         }
         Log.d("BackgroundService","end");
