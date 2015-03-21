@@ -22,9 +22,18 @@
         </activity>
 
         <service
-            android:name="com.gdg.devfestespresso.BackgroundService"
+            android:name=".BackgroundService"
             android:exported="false" >
         </service>
+
+        <activity
+            android:name=".TimeActivity"
+            android:label="@string/title_activity_time"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.gdg.devfestespresso.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

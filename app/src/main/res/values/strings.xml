@@ -23,4 +23,5 @@
     </string-array>
     <string name="title_activity_recycler_view">RecyclerViewActivity</string>
     <string name="background">Background</string>
+    <string name="title_activity_time">TimeActivity</string>
 </resources>

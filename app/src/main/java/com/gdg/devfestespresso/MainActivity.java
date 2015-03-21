@@ -87,6 +87,10 @@ public class MainActivity extends ActionBarActivity implements SharedPreferences
         } else if (id == R.id.action_test_bg) {
             Intent intent = new Intent(this,BackgroundService.class);
             startService(intent);
+        } else if (id == R.id.action_test_time) {
+            Intent intent = new Intent(this,TimeActivity.class);
+            startActivity(intent);
+            return true;
         }
 
         return super.onOptionsItemSelected(item);

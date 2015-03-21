@@ -5,6 +5,8 @@
         android:orderInCategory="100" app:showAsAction="always" />
     <item android:id="@+id/action_test_bg" android:title="@string/background"
         android:orderInCategory="100" app:showAsAction="never" />
+    <item android:id="@+id/action_test_time" android:title="Time"
+        android:orderInCategory="100" app:showAsAction="never" />
 
 
 </menu>
