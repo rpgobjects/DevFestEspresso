@@ -31,7 +31,7 @@ public class RecyclerViewActivityTest extends ActivityInstrumentationTestCase2<R
     }
 
     public void testRecyclerView() {
-        // assert is RecyclerView ia displayed and scroll to last position
+        // assert is RecyclerView is displayed and scroll to last position
         onView(withId(R.id.recycler_view)).check(matches(isDisplayed())).perform(RecyclerViewActions.scrollToPosition(5));
         // assert TextView is on screen
         onView(withText(R.string.getting_started)).check(matches(isDisplayed()));

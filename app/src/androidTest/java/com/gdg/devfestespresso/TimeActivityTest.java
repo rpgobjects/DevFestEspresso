@@ -24,9 +24,9 @@ public class TimeActivityTest extends ActivityInstrumentationTestCase2<TimeActiv
     }
 
     public void testTimePicker() {
-        // assert is RecyclerView ia displayed and scroll to last position
+        // assert is picker is displayed and set time
         onView(withId(R.id.time_pick)).check(matches(isDisplayed())).perform(PickerActions.setTime(10,30));
-        // assert TextView is on screen
+        // assert text matches
         onView(withId(R.id.test_results)).check(matches(withText("Hour=" + 10 + ", Min="+30)));
     }
 
