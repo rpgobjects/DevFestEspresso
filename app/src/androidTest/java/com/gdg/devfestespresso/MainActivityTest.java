@@ -1,5 +1,6 @@
 package com.gdg.devfestespresso;
 
+import android.preference.PreferenceManager;
 import android.support.test.espresso.contrib.RecyclerViewActions;
 import android.test.ActivityInstrumentationTestCase2;
 
@@ -57,6 +58,8 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
     }
 
     public void testBackground() {
+        // reset for test
+        PreferenceManager.getDefaultSharedPreferences(getActivity()).edit().putString(BackgroundService.BACKGROUND_MSG,"").apply();
         // register our idle resource
         ServiceIdlingResource serviceIdlingResource = new ServiceIdlingResource("testBackground",getActivity());
         registerIdlingResources(serviceIdlingResource);

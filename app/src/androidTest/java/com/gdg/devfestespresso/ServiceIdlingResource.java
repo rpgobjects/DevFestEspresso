@@ -8,7 +8,6 @@ import android.util.Log;
 
 public class ServiceIdlingResource implements IdlingResource {
 
-    private static final String TAG = "CDISyncIdlingResource";
     private final String resourceName;
     private Context context;
     private volatile IdlingResource.ResourceCallback resourceCallback;
@@ -32,10 +31,10 @@ public class ServiceIdlingResource implements IdlingResource {
                 Log.d("isServiceRunning",service.service.getClassName());
             }
             if ( service.service.getClassName().equals(BackgroundService.class.getName())) {
-                resourceCallback.onTransitionToIdle();
                 return false;
             }
         }
+        resourceCallback.onTransitionToIdle();
         return true;
     }
 
